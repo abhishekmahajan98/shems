@@ -1,12 +1,10 @@
-// ignore_for_file: library_private_types_in_public_api
-
 class ApiEndPoints {
-  static const String baseUrl = 'http://restapi.adequateshop.com/api/';
+  static const String baseUrl = 'http://localhost:3000/api/';
 
-  static _AuthEndPoints authEndPoints = _AuthEndPoints();
+  static _AuthEndPoints authEndpoints = _AuthEndPoints();
 }
 
 class _AuthEndPoints {
-  final registerUrl = '';
-  final loginUrl = 'authaccount/login';
+  final String register = '/v1/customer/register';
+  final String login = '/v1/customer/login';
 }
