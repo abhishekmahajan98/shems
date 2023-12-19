@@ -2,7 +2,6 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_rx/get_rx.dart';
 import 'package:shems/model/user.dart';
 import 'package:shems/utils/api_endpoints.dart';
 import 'package:http/http.dart' as http;

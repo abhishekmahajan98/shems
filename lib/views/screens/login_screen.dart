@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
+import 'package:shems/constants/size_constants.dart';
 import 'package:shems/controllers/login_controller.dart';
 import 'package:shems/views/screens/register_screen.dart';
 
@@ -21,23 +22,38 @@ class LoginScreen extends StatelessWidget {
                 child: Container(
                   height: 500,
                   width: 500,
-                  child: Column(
-                    children: [
-                      Text("Login Screen"),
-                      getTextField('Email', 'Enter email', false,
-                          loginController.emailController),
-                      getTextField('password', 'Enter password', true,
-                          loginController.passwordController),
-                      SizedBox(
-                        height: 10,
-                      ),
-                      ElevatedButton(
-                          onPressed: () => loginController.loginWithEmail(),
-                          child: Text("Login")),
-                      ElevatedButton(
-                          onPressed: () => Get.to(RegisterScreen()),
-                          child: Text("Register")),
-                    ],
+                  child: Padding(
+                    padding: const EdgeInsets.all(defaultPadding),
+                    child: Column(
+                      children: [
+                        Text(
+                          'Login Screen',
+                          style: TextStyle(color: Colors.white, fontSize: 18),
+                        ),
+                        getTextField('Email', 'Enter email', false,
+                            loginController.emailController),
+                        getTextField('password', 'Enter password', true,
+                            loginController.passwordController),
+                        SizedBox(
+                          height: 10,
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.all(defaultPadding),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: [
+                              ElevatedButton(
+                                  onPressed: () =>
+                                      loginController.loginWithEmail(),
+                                  child: Text("Login")),
+                              ElevatedButton(
+                                  onPressed: () => Get.to(RegisterScreen()),
+                                  child: Text("Register")),
+                            ],
+                          ),
+                        )
+                      ],
+                    ),
                   ),
                 ),
               )

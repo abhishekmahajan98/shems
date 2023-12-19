@@ -23,10 +23,8 @@ class AllLocationEnergyController extends GetxController {
     http.Response response =
         await http.post(url, body: jsonEncode(body), headers: headers);
     var data = jsonDecode(response.body.toString());
-    //print(data['locations']);
     for (Map<String, dynamic> index in data['locations']) {
       res[index['locationid']] = index['totalenergyusage'];
-      //print(index['locationid']);
     }
     return res;
   }

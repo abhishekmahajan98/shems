@@ -20,7 +20,6 @@ class GetCustomerLocationsController extends GetxController {
       var data = jsonDecode(response.body.toString());
       for (Map<String, dynamic> index in data) {
         customerLocations.add(CustomerLocation.fromJson(index));
-        //print(index.toString());
       }
       return customerLocations;
     } else {

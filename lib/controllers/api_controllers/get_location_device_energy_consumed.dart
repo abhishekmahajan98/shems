@@ -37,13 +37,10 @@ class LocationDeviceEnergyConsumedController extends GetxController {
     http.Response response =
         await getResponseData(user.c_id.toString(), loc_id);
     var data = jsonDecode(response.body.toString());
-    //print(data['locations']);
+    print(data['devices']);
     for (Map<String, dynamic> index in data['devices']) {
-      res[index['locationid']] = index['totalenergyusage'];
-
-      //print(index['locationid']);
+      res[index['deviceid']] = index['totalenergyusage'];
     }
-    print(res);
     return res;
   }
 
