@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:shems/controllers/login_controller.dart';
 import 'package:shems/views/screens/register_screen.dart';
@@ -49,9 +50,11 @@ class LoginScreen extends StatelessWidget {
 }
 
 TextField getTextField(String label, String hintText, bool obscure,
-    TextEditingController controller) {
+    TextEditingController controller,
+    {bool isNumeric = false}) {
   return TextField(
     controller: controller,
+
     decoration: InputDecoration(
       labelText: label,
       hintText: hintText,
@@ -60,5 +63,8 @@ TextField getTextField(String label, String hintText, bool obscure,
     // or
     // keyboardType: TextInputType.text, // for username
     obscureText: obscure, // for login
+    inputFormatters: isNumeric
+        ? <TextInputFormatter>[FilteringTextInputFormatter.digitsOnly]
+        : null,
   );
 }

@@ -8,12 +8,6 @@ import 'package:shems/utils/api_endpoints.dart';
 class AllLocationEnergyController extends GetxController {
   var allLocationEnergy = AllLocationEnergy();
 
-  @override
-  void onInit() {
-    super.onInit();
-    getAllLocationEnergy();
-  }
-
   Future<Map<String, double>> getAllLocationEnergy() async {
     User user = Get.put(User());
     Map<String, double> res = {};

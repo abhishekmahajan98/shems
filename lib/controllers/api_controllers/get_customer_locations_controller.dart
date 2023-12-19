@@ -16,7 +16,6 @@ class GetCustomerLocationsController extends GetxController {
         user.c_id.toString() +
         '/service-locations');
     final response = await http.get(url);
-    print(response.statusCode);
     if (response.statusCode == 200) {
       var data = jsonDecode(response.body.toString());
       for (Map<String, dynamic> index in data) {

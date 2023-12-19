@@ -59,18 +59,3 @@ class RegisterScreen extends StatelessWidget {
     );
   }
 }
-
-TextField getTextField(String label, String hintText, bool obscure,
-    TextEditingController controller) {
-  return TextField(
-    controller: controller,
-    decoration: InputDecoration(
-      labelText: label,
-      hintText: hintText,
-    ),
-    keyboardType: TextInputType.emailAddress, // for email
-    // or
-    // keyboardType: TextInputType.text, // for username
-    obscureText: obscure, // for login
-  );
-}

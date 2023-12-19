@@ -8,8 +8,10 @@ import 'package:http/http.dart' as http;
 
 class GetLocationDevicesController extends GetxController {
   var locationDevices = RxList<LocationDevices>();
+
   Future<RxList<LocationDevices>> getLocationDevices(String loc_id) async {
     User user = Get.put(User());
+    locationDevices.clear();
     var url = Uri.parse(ApiEndPoints.baseUrl +
         'v1/customer/' +
         user.c_id.toString() +
@@ -22,7 +24,6 @@ class GetLocationDevicesController extends GetxController {
       var data = jsonDecode(response.body.toString());
       for (Map<String, dynamic> index in data) {
         locationDevices.add(LocationDevices.fromJson(index));
-        //print(index.toString());
       }
       return locationDevices;
     } else {
