@@ -57,7 +57,8 @@ class RegisterScreen extends StatelessWidget {
                                 'phone number',
                                 'Enter phone number',
                                 false,
-                                registrationController.phoneNumberController),
+                                registrationController.phoneNumberController,
+                                isNumeric: true),
                             getTextField('password', 'Enter password', true,
                                 registrationController.passwordController),
                             Padding(

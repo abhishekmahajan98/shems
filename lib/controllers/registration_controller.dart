@@ -35,7 +35,7 @@ class RegisterationController extends GetxController {
 
       http.Response response =
           await http.post(url, body: jsonEncode(body), headers: headers);
-
+      print("reg:" + response.statusCode.toString());
       if (response.statusCode == 200) {
         //await prefs?.setString('token', token);
         firstNameController.clear();
@@ -45,12 +45,13 @@ class RegisterationController extends GetxController {
         billingAddressController.clear();
         emailController.clear();
         passwordController.clear();
+        Get.snackbar("Registered Successfully",
+            "Please reload the page to see the changes");
         Get.off(LoginScreen());
       } else {
-        throw jsonDecode(response.body)["Message"] ?? "Unknown Error Occured";
+        throw jsonDecode(response.body)["error"] ?? "Unknown Error Occured";
       }
     } catch (e) {
-      Get.back();
       showDialog(
           context: Get.context!,
           builder: (context) {

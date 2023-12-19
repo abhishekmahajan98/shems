@@ -174,7 +174,8 @@ class _MainScreenState extends State<MainScreen> {
                                                 'zipcode',
                                                 'zipcode',
                                                 false,
-                                                addlocationController.zipcode),
+                                                addlocationController.zipcode,
+                                                isNumeric: true),
                                             getTextField(
                                                 'occupants',
                                                 'occupants',
@@ -182,9 +183,11 @@ class _MainScreenState extends State<MainScreen> {
                                                 addlocationController.occupants,
                                                 isNumeric: true),
                                             getTextField('beds', 'beds', false,
-                                                addlocationController.beds),
+                                                addlocationController.beds,
+                                                isNumeric: true),
                                             getTextField('area', 'area', false,
-                                                addlocationController.area),
+                                                addlocationController.area,
+                                                isNumeric: true),
                                             ElevatedButton(
                                               onPressed: () {
                                                 addlocationController
